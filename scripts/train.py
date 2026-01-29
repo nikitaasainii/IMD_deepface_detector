@@ -176,7 +176,7 @@ def main():
         train_dataset=train_dataset,
         val_dataset=val_dataset,
         batch_size=args.batch_size,
-        num_workers=4
+        num_workers=0
     )
 
     # Create model
