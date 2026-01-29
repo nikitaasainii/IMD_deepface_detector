@@ -8,7 +8,7 @@ from deepfake_detector.utils.metrics import (
 )
 from deepfake_detector.utils.logger import setup_logger, get_logger
 from deepfake_detector.utils.visualization import (
-    plot_confusion_matrix,
+    confusion_matrix,
     plot_roc_curve,
     plot_training_history
 )
