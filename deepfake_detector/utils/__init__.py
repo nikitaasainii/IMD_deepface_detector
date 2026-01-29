@@ -12,7 +12,7 @@ from deepfake_detector.utils.visualization import (
     plot_roc_curve,
     plot_training_history
 )
-
+from .metrics import calculate_comprehensive_metrics, plot_confusion_matrix, plot_training_history
 __all__ = [
     "calculate_metrics",
     "get_EER_states",
