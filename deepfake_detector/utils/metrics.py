@@ -6,7 +6,8 @@ Includes EER, ACER, APCER, NPCER, and other forensic metrics.
 import numpy as np
 import math
 from typing import Tuple, List, Dict
-from sklearn.metrics import accuracy_score, confusion_matrix, roc_auc_score
+from sklearn.metrics import accuracy_score, roc_auc_score
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import logging
 from typing import Optional, Any, Union
 
