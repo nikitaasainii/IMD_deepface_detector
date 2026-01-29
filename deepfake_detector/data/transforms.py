@@ -39,7 +39,8 @@ def get_train_transforms(
             HorizontalFlip(p=0.5),
             VerticalFlip(p=0.1),
             RandomResizedCrop(
-                size=(image_size, image_size),
+                height=image_size,
+                width=image_size,
                 scale=(0.5, 1.0),
                 ratio=(0.9, 1.1),
                 p=0.5
@@ -94,7 +95,7 @@ def get_train_transforms(
             ),
 
             # Final resize and normalization
-            Resize(image_size, image_size, always_apply=True),
+            Resize(height=image_size, width=image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
                 std=[0.229, 0.224, 0.225],
@@ -106,11 +107,12 @@ def get_train_transforms(
         return Compose([
             HorizontalFlip(p=0.5),
             RandomResizedCrop(
-                size=(image_size, image_size),
+                height=image_size,
+                width=image_size,
                 scale=(0.5, 1.0),
                 p=0.5
             ),
-            Resize(image_size,image_size, always_apply=True),
+            Resize(height=image_size,width=image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
                 std=[0.229, 0.224, 0.225],
@@ -135,7 +137,7 @@ def get_val_transforms(image_size: int = 224) -> Compose:
         >>> preprocessed = transforms(image=image)
     """
     return Compose([
-        Resize(image_size,image_size, always_apply=True),
+        Resize(height=image_size,width=image_size, always_apply=True),
         Normalize(
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225],
@@ -166,7 +168,7 @@ def get_test_time_augmentation_transforms(image_size: int = 224) -> list:
         # Horizontal flip
         Compose([
             HorizontalFlip(p=1.0),
-            Resize(image_size,image_size, always_apply=True),
+            Resize(height=image_size,width=image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
                 std=[0.229, 0.224, 0.225],
@@ -178,7 +180,7 @@ def get_test_time_augmentation_transforms(image_size: int = 224) -> list:
         # Slight brightness adjustment
         Compose([
             RandomBrightnessContrast(limit=0.1, p=1.0),
-            Resize(image_size, image_size, always_apply=True),
+            Resize(height=image_size,width=image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
                 std=[0.229, 0.224, 0.225],
@@ -190,7 +192,7 @@ def get_test_time_augmentation_transforms(image_size: int = 224) -> list:
         # Slight contrast adjustment
         Compose([
             RandomBrightnessContrast(limit=0.1, p=1.0),
-            Resize(image_size,image_size, always_apply=True),
+            Resize(height=image_size,width=image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
                 std=[0.229, 0.224, 0.225],
