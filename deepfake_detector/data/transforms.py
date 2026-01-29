@@ -107,7 +107,8 @@ def get_train_transforms(
         return Compose([
             HorizontalFlip(p=0.5),
             RandomResizedCrop(
-                size=(image_size, image_size),
+                 height=image_size,
+                width=image_size,
                 scale=(0.5, 1.0),
                 p=0.5
             ),
