@@ -41,7 +41,6 @@ def get_train_transforms(
             RandomResizedCrop(
                 height=image_size,
                 width=image_size,
-                size=(image_size, image_size),
                 scale=(0.5, 1.0),
                 ratio=(0.9, 1.1),
                 p=0.5
@@ -108,8 +107,6 @@ def get_train_transforms(
         return Compose([
             HorizontalFlip(p=0.5),
             RandomResizedCrop(
-                height=image_size,
-                width=image_size,
                 size=(image_size, image_size),
                 scale=(0.5, 1.0),
                 p=0.5
