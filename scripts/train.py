@@ -154,7 +154,7 @@ def main():
     # Create datasets
     logger.info("Creating datasets...")
 
-    image_size = 240 if 'b1' in args.model else 224
+    image_size = (240,240) if 'b1' in args.model else 224
 
     train_transforms = get_train_transforms(image_size)
     val_transforms = get_val_transforms(image_size)
