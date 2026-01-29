@@ -24,8 +24,8 @@ from deepfake_detector.models import DeepFakeDetector
 from deepfake_detector.data import create_combined_dataset, get_train_transforms, get_val_transforms, create_dataloaders
 from deepfake_detector.utils import setup_logger, calculate_comprehensive_metrics, plot_confusion_matrix, plot_training_history
 from deepfake_detector.config import Config, load_config
-
-from transformers.optimization import AdamW, get_cosine_schedule_with_warmup
+from torch.optim import AdamW
+from transformers import get_cosine_schedule_with_warmup
 
 
 def train_epoch(model, dataloader, criterion, optimizer, scheduler, device, epoch, logger):
