@@ -7,7 +7,7 @@ from albumentations import (
     Compose, HorizontalFlip, RandomResizedCrop, Resize,
     Normalize, VerticalFlip, Rotate, ShiftScaleRotate,
     OpticalDistortion, GridDistortion, ElasticTransform,
-    JpegCompression, HueSaturationValue, RGBShift,
+    ImageCompression, HueSaturationValue, RGBShift,
     RandomBrightness, RandomContrast, Blur, MotionBlur,
     MedianBlur, GaussNoise, CLAHE, RandomGamma, CoarseDropout
 )
@@ -63,7 +63,7 @@ def get_train_transforms(
             ),
 
             # Compression and noise
-            JpegCompression(quality_lower=75, quality_upper=100, p=0.3),
+            ImageCompression(quality_lower=75, quality_upper=100, p=0.3),
             GaussNoise(var_limit=(10.0, 50.0), p=0.3),
 
             # Color augmentations
