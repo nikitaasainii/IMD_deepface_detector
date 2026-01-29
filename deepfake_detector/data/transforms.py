@@ -8,7 +8,7 @@ from albumentations import (
     Normalize, VerticalFlip, Rotate, ShiftScaleRotate,
     OpticalDistortion, GridDistortion, ElasticTransform,
     ImageCompression, HueSaturationValue, RGBShift,
-    RandomBrightnessConstrast, Blur, MotionBlur,
+    RandomBrightnessContrast, Blur, MotionBlur,
     MedianBlur, GaussNoise, CLAHE, RandomGamma, CoarseDropout
 )
 from albumentations.pytorch import ToTensorV2
@@ -74,8 +74,8 @@ def get_train_transforms(
                 p=0.3
             ),
             RGBShift(r_shift_limit=15, g_shift_limit=15, b_shift_limit=15, p=0.3),
-            RandomBrightnessConstrast(limit=0.2, p=0.3),
-            RandomBrightnessConstrast(limit=0.2, p=0.3),
+            RandomBrightnessContrast(limit=0.2, p=0.3),
+            RandomBrightnessContrast(limit=0.2, p=0.3),
             RandomGamma(gamma_limit=(80, 120), p=0.3),
             CLAHE(p=0.2),
 
@@ -177,7 +177,7 @@ def get_test_time_augmentation_transforms(image_size: int = 224) -> list:
 
         # Slight brightness adjustment
         Compose([
-            RandomBrightnessConstrast(limit=0.1, p=1.0),
+            RandomBrightnessContrast(limit=0.1, p=1.0),
             Resize(image_size, image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
@@ -189,7 +189,7 @@ def get_test_time_augmentation_transforms(image_size: int = 224) -> list:
 
         # Slight contrast adjustment
         Compose([
-            RandomBrightnessConstrast(limit=0.1, p=1.0),
+            RandomBrightnessContrast(limit=0.1, p=1.0),
             Resize(image_size, image_size, always_apply=True),
             Normalize(
                 mean=[0.485, 0.456, 0.406],
