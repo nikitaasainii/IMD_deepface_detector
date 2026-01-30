@@ -109,7 +109,7 @@ def main():
     _, _, test_loader = create_dataloaders(
         test_dataset=test_dataset,
         batch_size=args.batch_size,
-        num_workers=4
+        num_workers=0
     )
 
     # Load model
