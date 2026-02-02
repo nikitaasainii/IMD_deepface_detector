@@ -3,12 +3,13 @@ This project is an advanced computer vision framework designed to tackle the gro
 ## Acknowledgements
 
  - [This project is based on the architecture provided here.](https://github.com/umitkacar/multimodal-deepfake-detector)
+   
 
 ## Deployment
 
 To deploy this project run: 
 
-##1 Installation
+#1 Installation
 ```bash
   # Clone the repository
 git clone https://github.com/umitkacar/DeepFake-EfficientNet.git
@@ -21,7 +22,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 ```
-##2 Extraction of Images/Video Frames
+#2 Extraction of Images/Video Frames
 ```bash
 # Extract faces from videos
 python scripts/extract_faces.py \
@@ -37,7 +38,7 @@ python scripts/extract_faces.py \
     --output-dir /path/to/extracted_faces \
     --mode image
 ```
-##3 Training
+#3 Training
 ```bash
 python scripts/train.py \
     --train-real /path/to/train/real \
@@ -50,7 +51,7 @@ python scripts/train.py \
     --lr 8e-4 \
     --model efficientnet-b1
 ```
-##4 Testing
+#4 Testing
 ```bash
 python scripts/test.py \
     --test-real /path/to/test/real \
@@ -60,7 +61,7 @@ python scripts/test.py \
     --batch-size 100 \
     --save-predictions
 ```
-##5 Inputting on New Image/Video frames
+#5 Inputting on New Image/Video frames
 ```bash
 # Single image inference
 python scripts/inference.py \
@@ -75,7 +76,7 @@ python scripts/inference.py \
     --model efficientnet-b1 \
     --output predictions.csv
 ```
-##6 Running the Web App
+#6 Running the Web App
 ```bash
 #Web app (provides a local host URL)
 pyhton scripts/webapp.py
