@@ -1,0 +1,19 @@
+Test Results
+============================================================
+accuracy: 0.4444444444444444
+apcer: 0.0
+npcer: 1.0
+acer: 0.5
+precision: 0.0
+recall: 0.0
+f1_score: 0.0
+specificity: 1.0
+tp: 0
+tn: 4
+fp: 0
+fn: 5
+eer: 0.55
+optimal_threshold: 0.3886
+hter: 0.5
+accuracy_at_optimal_thr: 0.4444444444444444
+auc_roc: 0.55

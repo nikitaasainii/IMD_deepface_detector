@@ -1,0 +1,2 @@
+image,prediction,real_prob,fake_prob,confidence
+passport.jpg,REAL,0.5565615,0.44343847,0.5565615
