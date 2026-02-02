@@ -6,7 +6,8 @@ This project is an advanced computer vision framework designed to tackle the gro
 
 ## Deployment
 
-To deploy this project run:
+To deploy this project run: 
+
 ##1 Installation
 ```bash
   # Clone the repository
